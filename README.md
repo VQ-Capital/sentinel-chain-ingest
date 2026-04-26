@@ -1,15 +1,9 @@
-# sentinel-chain-ingest
-Görev: Borsaların dışındaki, bizzat blokzincirin içindeki ham hareketler.
+# ⛓️ sentinel-onchain-ingest (Legacy: sentinel-chain-ingest)
 
-Kaynaklar: Mempool.space, Whale Alert API, EtherScan WebSockets.
+**Domain:** Mempool & Pre-Trade Signal Ingestion
+**Rol:** Sistemin Erken Uyarı Radarı
 
-NATS Subject: chain.tx.*, chain.urgency.*
+Bu servis, borsaların fiyatları daha tepki vermeden önce blockchain ağının bizzat kendi içindeki (Mempool) hareketliliği okur. Tıkanıklık ve işlem ücreti anomalilerini ölçerek Quant motoru için 4. Boyut olan "Chain Urgency" verisini üretir.
 
-Karakter: Fiyatı önceden haber veren (Pre-Trade) veriler.
-
----
-Karakter: Pre-Trade Alpha (İşlem Öncesi Erken Uyarı).
-
-Veri: Mempool Urgency, Whale Transfers, Gas Price Anomalies.
-
-SaaS Değeri: "Balina Radarı" ve "Smart Money Takibi" olarak satılır.
+- **NATS Çıktısı:** `chain.urgency.*`
+- **SLA Hedefi:** < 100ms
